@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "deployAliases": {
+    "b": {
+      "url": "https://proxy.berkeley.minaexplorer.com/graphql",
+      "keyPath": "keys/b.json",
+      "feepayerKeyPath": "/home/salim/.cache/zkapp-cli/keys/keypayer1.json",
+      "feepayerAlias": "keypayer1",
+      "fee": "0.1"
+    }
+  }
+}
