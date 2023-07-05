@@ -20,6 +20,14 @@ With little modification, the definition of a matching path can be modified to:
  - include a time window (e.g. 5 minutes, 1 month, etc.)
  - a dynamic number of previous pages, optimising for cohorts with more in common or of specific sizes
 
+## Relevant files
+
+`contracts/src/Paths.ts` produces 3 exports: 
+- Paths - a smart contract that verifies state of a Merkle Tree of Links
+- Links - a struct that recursively tracks user actions
+- friendsHash - a function that produces a unique hash given two Links
+
+`contracts/src/Paths.test.ts` contains the unit tests, which are set up based on the user scenario below
 
 ## Test scenario
 The test runs based on a scenario of 5 users entering a website at different points. They can meet others on the same path (defined as visiting the same page and the same previous pages)
