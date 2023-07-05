@@ -17,8 +17,8 @@ Broadly, this primitive opens new opportunities for social interaction, educatio
 
 ### Simple variations
 With little modification, the definition of a matching path can be modified to:
- - include a time window (e.g. 5 minutes, 1 month, e)
- - a dynamic number of previous pages, optimising for cohorts with more in common or of specifici sizes
+ - include a time window (e.g. 5 minutes, 1 month, etc.)
+ - a dynamic number of previous pages, optimising for cohorts with more in common or of specific sizes
 
 
 ## Test scenario
@@ -26,9 +26,9 @@ The test runs based on a scenario of 5 users entering a website at different poi
 
 A first user visits 3 pages, and is joined by 2 others on the way. 
 
-Two others meet on another page, but not the same path, since a path is requires 2 common pages.
+Two others arrive on a separate page, but are not considered on the same path, since a path requires 2 common pages.
 
-Each user's path is recorded on a separate "local" merkle tree, but the same on-chain tree root.
+Each user's path is recorded on a separate "local" merkle trees, but made consistent using the same on-chain tree root.
 
 ## How to build
 ```sh
