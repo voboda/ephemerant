@@ -2,11 +2,14 @@
 
 Ephemerant is a primitive that allows you to interact with people you cross paths with.
 
+In a way, it creates the basis for Gibson's version of the Metaverse, an interweaving set of ephemeral hubs that have no center, and can only be revealed to individual users as they decide on their own paths.
+
 When implemented in a website or app, users' paths are recorded (locally only) but as their paths weave and overlap with others, they're placed in an **ephemeral cohort** and can choose to engage with each other. (Anonymously by default.)
 
-Paths are created through recursively-referenced Links objects, which each contain a URL and reference to the previous Link. (The URL can be substituted for any other data referencing a user event.)
+This mechanism is opt-in and zero knowledge, so the user can choose to join or not at any point. If they join, no personal information is needed, they simply share a common key with others on their path, **an ephemerant key** that represents each ephemeral cohort. 
 
-This mechanism is opt-in and zero knowledge, so the user can choose to join or not at any point. If they join, no personal information is needed, they simply share a common key with others on their path, **an ephemerant cohort key**. 
+Paths are created through recursively-referenced Links objects, which each contain a URL and reference to the previous Link. (The URL can be substituted for any other data referencing a user event.) Those Paths are recorded off-chain with zk-SNARKS, and verified on-chain on the Mina Blockchain.  Common areas for communication (created by the shared ephemerant key) are therefore completely generative.  When Paths span internet locations hosted by different parties, they are even unpredictable and unknowable to hosts.
+
 
 ### Use cases
 This key can be used in many ways, for example to create a group chat, specify a secret meeting link, or expose an airdrop to visitors who find their way to the right pages on a site.
