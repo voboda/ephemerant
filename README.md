@@ -10,6 +10,8 @@ When implemented in a website or app, users' paths are recorded (locally only) b
 
 This mechanism is opt-in and zero knowledge, so the user can choose to join or not at any point. If they join, no personal information is needed, they simply share a common key with others on their path, **an ephemerant key** that represents each ephemeral cohort. 
 
+Each user's path is recorded on a separate "local" merkle trees, but verified and made consistent using the same on-chain tree root.
+
 Paths are created through recursively-referenced Links objects, which each contain a URL and reference to the previous Link. (The URL can be substituted for any other data referencing a user event.) Those Paths are recorded off-chain with zk-SNARKS, and verified on-chain on the Mina Blockchain.  Common areas for communication (created by the shared ephemerant key) are therefore completely generative.  When Paths span internet locations hosted by different parties, they are even unpredictable and unknowable to hosts. Since the ephemerant keys are generated from these paths, they create spaces that only be found by users themselves.
 
 
@@ -35,13 +37,20 @@ With little modification, the definition of a matching path can be modified to:
 `contracts/src/Paths.test.ts` contains the unit tests, which are set up based on the user scenario below
 
 ## Test scenario
-The test runs based on a scenario of 5 users entering a website at different points. They can meet others on the same path (defined as visiting the same page and the same previous pages)
+The test n `Paths.test.js` runs based on a scenario of 5 users entering a website at different pages. If any two users visit the same page, and then click on the same link, they are given the same `friendHash` key (the ephemerant key).  
 
-A first user visits 3 pages, and is joined by 2 others on the way. 
+A real-world implimentation could use that keey to connect them to an on-site (like customer-support interfaces, but making peer connections real-time) , or link them to a common third-part room in Matrix chat, using that key.
+
+They can meet others on the same path (defined as visiting the same page and the same previous pages)
+
+A first user visits 3 pages, and is joined by one more on the way. And a third on the last page.
+
+Since only the first 2 users share a common path (the third only joined for a single page) those two users are connected by revealing the same friendHash.
 
 Two others arrive on a separate page, but are not considered on the same path, since a path requires 2 common pages.
 
-Each user's path is recorded on a separate "local" merkle trees, but made consistent using the same on-chain tree root.
+The test file has comments, to allow you to follow along this scenario alongside the technical implementation.
+
 
 ## How to build
 ```sh
