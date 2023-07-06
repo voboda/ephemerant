@@ -1,6 +1,6 @@
 # Ephemerant
 
-Ephemerant allows you to interact with people who's paths you've crossed.
+Ephemerant allows you to interact with people whose paths you've crossed.
 
 It is a Zero-Knowledge primitive for connecting users in ephemeral cohorts based on common behaviour. It is anonymous, opt-in, and fully-decentralized.
 
