@@ -20,15 +20,17 @@ export class Link extends Struct({
     return Poseidon.hash(this.toFields());
   }
 
+  //a 256-bit unique hash of the link
   toMiniHash(): BigInt {
-    return BigInt(this.toHash().toString().slice(0, 16));
+    return BigInt(this.toHash().toString()) % BigInt(2 ** 256);
   }
 
+  //a 32 digit unique hash of the link, for use in URLs like chatroom names
   toURLHash(): BigInt {
     return BigInt(
       Poseidon.hash(
           CircuitString.fromString(this.url).toFields()
-      ).toString().slice(0, 16)
+      ).toString().slice(0, 32)
     )
   }
 

@@ -56,7 +56,9 @@ rawLinks.forEach((rawLink,i) => {
     prevLink
   })
 
-  linkStore.set(link[i].toURLHash(), rawLink);  
+  //store the link in the application storage 
+  linkStore.set(link[i].toURLHash(), rawLink); 
+  console.log(`Link ${i}`, link[i], link[i].toURLHash(),link[i].toMiniHash())
 })
 
 function createLinksTree(): any {
