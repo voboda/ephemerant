@@ -4,7 +4,7 @@ Ephemerant allows you to interact with people whose paths you've crossed.
 
 It is a Zero-Knowledge primitive for connecting users in ephemeral cohorts based on common behaviour. It is anonymous, opt-in, and fully-decentralized.
 
-In a way, it creates the basis for Gibson's version of the Metaverse, an interweaving set of ephemeral hubs that have no center, and can only be revealed to individual users as they decide on their own paths.
+In a way, it creates the basis for Gibson's version of Cyberspace, an interweaving set of ephemeral hubs that have no center, and can only be revealed to individual users as they decide on their own paths. (Prophetically, a theme in Neuromancer was moving communication fleetingly out of public spheres to avoid the gaze of AIs.)
 
 When implemented in a website or app, users' paths are recorded (locally only) but as their paths weave and overlap with others, they're placed in an **ephemeral cohort** and can choose to engage with each other. (Anonymously by default.)
 
