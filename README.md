@@ -1,6 +1,8 @@
 # Ephemerant
 
-Ephemerant is a primitive that allows you to interact with people you cross paths with.
+Ephemerant allows you to interact with people who's paths you've crossed.
+
+It is a Zero-Knowledge primitive for connecting users in ephemeral cohorts based on common behaviour. It is anonymous, opt-in, and fully-decentralized.
 
 In a way, it creates the basis for Gibson's version of the Metaverse, an interweaving set of ephemeral hubs that have no center, and can only be revealed to individual users as they decide on their own paths.
 
@@ -8,7 +10,7 @@ When implemented in a website or app, users' paths are recorded (locally only) b
 
 This mechanism is opt-in and zero knowledge, so the user can choose to join or not at any point. If they join, no personal information is needed, they simply share a common key with others on their path, **an ephemerant key** that represents each ephemeral cohort. 
 
-Paths are created through recursively-referenced Links objects, which each contain a URL and reference to the previous Link. (The URL can be substituted for any other data referencing a user event.) Those Paths are recorded off-chain with zk-SNARKS, and verified on-chain on the Mina Blockchain.  Common areas for communication (created by the shared ephemerant key) are therefore completely generative.  When Paths span internet locations hosted by different parties, they are even unpredictable and unknowable to hosts.
+Paths are created through recursively-referenced Links objects, which each contain a URL and reference to the previous Link. (The URL can be substituted for any other data referencing a user event.) Those Paths are recorded off-chain with zk-SNARKS, and verified on-chain on the Mina Blockchain.  Common areas for communication (created by the shared ephemerant key) are therefore completely generative.  When Paths span internet locations hosted by different parties, they are even unpredictable and unknowable to hosts. Since the ephemerant keys are generated from these paths, they create spaces that only be found by users themselves.
 
 
 ### Use cases
@@ -28,7 +30,7 @@ With little modification, the definition of a matching path can be modified to:
 `contracts/src/Paths.ts` produces 3 exports: 
 - Paths - a smart contract that verifies state of a Merkle Tree of Links
 - Links - a struct that recursively tracks user actions
-- friendsHash - a function that produces a unique hash given two Links
+- friendsHash - a function that produces a unique hash given two Links. **(This is the ephemerant key.)**
 
 `contracts/src/Paths.test.ts` contains the unit tests, which are set up based on the user scenario below
 
